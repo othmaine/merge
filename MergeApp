@@ -3,14 +3,11 @@ public class MergeApp
     public static void main(String[] args) 
     {
         
-         int[] a  = {1,4,6,9,11,14};
-         int[] b  = {2,3,5,7,13,13};
+         int[] a  = {1,4,6,9,11,14}; // display
+         int[] b  = {2,3,5,7,13,13}; 
          int c[] = merge( a, b);
 
-        for(int cCount=0; cCount < c.length; cCount++ )
-        {
-            System.out.print(c[cCount]+ " ");
-        }
+         printArr(c);
         
     }
     public static int[] merge(int a[] , int b[])
@@ -19,7 +16,7 @@ public class MergeApp
          int[] c = new int[b.length+a.length];
     
         int aCount=0, bCount = 0;
-        for(int cCount=0; cCount < c.length; cCount++ )
+        for(int cCount=0; cCount < c .length; cCount++ )
         {
             if(a[aCount] <= b[bCount])
             {
@@ -48,6 +45,13 @@ public class MergeApp
         }
          return c;
         
+    }
+    public static void printArr(int[] arr)
+    {
+        for(int Count=0; Count < arr.length; Count++ )
+        {
+            System.out.print(arr[Count]+ " ");
+        }
     }
     
 }
