@@ -1,0 +1,53 @@
+public class MergeApp 
+{
+    public static void main(String[] args) 
+    {
+        
+         int[] a  = {1,4,6,9,11,14};
+         int[] b  = {2,3,5,7,13,13};
+         int c[] = merge( a, b);
+
+        for(int cCount=0; cCount < c.length; cCount++ )
+        {
+            System.out.print(c[cCount]+ " ");
+        }
+        
+    }
+    public static int[] merge(int a[] , int b[])
+    {
+        
+         int[] c = new int[b.length+a.length];
+    
+        int aCount=0, bCount = 0;
+        for(int cCount=0; cCount < c.length; cCount++ )
+        {
+            if(a[aCount] <= b[bCount])
+            {
+                c[cCount] =a[aCount];
+                if(aCount<a.length -1)
+                {
+                    aCount++;
+                }
+                else
+                {
+                    a[aCount]=b[bCount];
+                }
+            }
+            else
+            {
+                c[cCount] =b[bCount];
+                if(bCount<b.length-1)
+                {
+                    bCount++;
+                }
+                else
+                {
+                    b[bCount]=a[aCount];
+                }
+            }
+        }
+         return c;
+        
+    }
+    
+}
